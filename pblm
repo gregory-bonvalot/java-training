@@ -1,0 +1,55 @@
+JUnit version 4.12
+.E.E.E.E.E.E..E.E..E.E.E.E.E.E.E
+Time: 0.037
+There were 15 failures:
+1) testIntToString(StringTrainingTest)
+org.junit.ComparisonFailure: Method: intToString expected:<[42]> but was:<[3]>
+	
+2) testReplaceString(StringTrainingTest)
+org.junit.ComparisonFailure: Method: replaceString expected:<[sxhtle]> but was:<[toast]>
+	
+3) testLower(StringTrainingTest)
+org.junit.ComparisonFailure: Method: lower expected:<[sample]> but was:<[test]>
+	
+4) testSplit(StringTrainingTest)
+java.lang.AssertionError: Method: split: array lengths differed, expected.length=3 actual.length=10
+	
+5) testUpper(StringTrainingTest)
+org.junit.ComparisonFailure: Method: upper expected:<[SAMPLE]> but was:<[TEST]>
+	
+6) testJoin(StringTrainingTest)
+org.junit.ComparisonFailure: Method: join expected:<[sample|test|]value> but was:<[test;value;]value>
+	
+7) testCharToString(StringTrainingTest)
+org.junit.ComparisonFailure: Method: charToString expected:<[v]> but was:<[t]>
+	
+8) testReplaceChar(StringTrainingTest)
+org.junit.ComparisonFailure: Method: replaceChar expected:<[ixampli]> but was:<[wesw]>
+	
+9) testHelloFirstname(StringTrainingTest)
+org.junit.ComparisonFailure: Method: helloFirstname expected:<Hello [Pedro]> but was:<Hello [Brandon]>
+	
+10) testSubString(StringTrainingTest)
+org.junit.ComparisonFailure: Method: subString expected:<[amp]> but was:<[es]>
+	
+	
+11) testFirstChar(StringTrainingTest)
+java.lang.AssertionError: Method: firstChar expected:<s> but was:<t>
+	
+	
+12) testEquals(StringTrainingTest)
+java.lang.AssertionError: Method: equals expected:<true> but was:<false>
+	
+13) testLength(StringTrainingTest)
+java.lang.AssertionError: Method: length expected:<6> but was:<4>
+	
+14) testConcatArgs(StringTrainingTest)
+org.junit.ComparisonFailure: Method: concatArgs expected:<[sampletest]> but was:<[testvalue]>
+	
+15) testCapitalize(StringTrainingTest)
+org.junit.ComparisonFailure: Method: capitalize expected:<[Sample]> but was:<[Test]>
+	
+
+FAILURES!!!
+Tests run: 17,  Failures: 15
+

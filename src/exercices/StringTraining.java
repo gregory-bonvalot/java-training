@@ -1,12 +1,13 @@
 public class StringTraining {
 
     /**
-     * @param firstname, ie : "Brandon"
-     * @return a string that concatenates "Hello " and firstname, ie : "Hello Brandon"
+     @param firstname, ie : "Brandon"
+     @return a string that concatenates "Hello " and firstname, ie : "Hello Brandon"
      */
     public static String helloFirstname(String firstname) {
-
-        return "Hello ";
+    	
+    	//firstname = "Brandon";
+        return "Hello " + firstname;
     }
 
     /**
@@ -15,8 +16,9 @@ public class StringTraining {
      * @return a string with both word, ie : "testvalue"
      */
     public static String concatArgs(String first, String second) {
-
-        return "";
+    	//first = "sample";
+    	//second = "test";
+        return first + second;
     }
 
     /**
@@ -25,8 +27,9 @@ public class StringTraining {
      * @return if origin string is equal to compare string
      */
     public static boolean equals(String origin, String compare) {
-
-        return false;
+    	/*origin = "test";
+    	compare = "sample";*/
+        return origin.equals(compare);
     }
 
     /**
@@ -34,8 +37,9 @@ public class StringTraining {
      * @return conversion of the character into String, eg: "t"
      */
     public static String charToString(char value) {
-
-        return "";
+    	//value = 't';
+    	//String t=Character.toString(value);
+        return Character.toString(value);
     }
 
     /**
@@ -43,8 +47,9 @@ public class StringTraining {
      * @return convertion of the integer into String, eg: "3"
      */
     public static String intToString(int value) {
-
-        return "";
+    	//value = 3;
+    	//String trois = Integer.toString(value);
+        return Integer.toString(value);
     }
 
     /**
@@ -52,8 +57,8 @@ public class StringTraining {
      * @return string length, eg: 4
      */
     public static int length(String string) {
-
-        return 0;
+    	//string = "test";
+        return string.length();  
     }
 
     /**
@@ -61,8 +66,8 @@ public class StringTraining {
      * @return string in upper case, eg: "TEST"
      */
     public static String upper(String string) {
-
-        return "";
+    	//string = "test";
+        return string.toUpperCase();
     }
 
     /**
@@ -70,8 +75,8 @@ public class StringTraining {
      * @return string in lower case, eg: "test"
      */
     public static String lower(String string) {
-
-        return "";
+    	//string = "TEST";
+        return string.toLowerCase();
     }
 
     /**
@@ -79,8 +84,9 @@ public class StringTraining {
      * @return first character of the string, eg: 't'
      */
     public static char firstChar(String string) {
-
-        return '*';
+    	//string = "test";
+       // return string.length(0);
+        return string.charAt(0);
     }
 
     /**
@@ -88,8 +94,9 @@ public class StringTraining {
      * @return last character of the string, eg: 'e'
      */
     public static char lastChar(String string) {
-
-        return '*';
+    	//string = "value";
+    	int longueur = string.length() ;
+        return string.charAt(longueur - 1);
     }
 
     /**
@@ -100,8 +107,10 @@ public class StringTraining {
      */
     public static String subString(String string, int begin, int end) {
         // https://howtodoinjava.com/java/string/java-string-substring-example/
-
-        return "";
+    	/*string = "test";
+    	begin = 1;
+    	end = 3;*/
+        return string.substring(begin, end);
     }
 
     /**
@@ -109,8 +118,10 @@ public class StringTraining {
      * @return the string with the first character in upper case, eg: "Test"
      */
     public static String capitalize(String string) {
-
-        return "";
+    	//string = "test";
+    	/*string.toUpperCase(0);*/
+    	String cap = string.substring(0, 1).toUpperCase() + string.substring(1);
+        return cap;
     }
 
     /**
@@ -119,8 +130,17 @@ public class StringTraining {
      * @return the number of character occurrences in string, eg: 2
      */
     public static int occurrences(String string, char search) {
-
-        return 0;
+    	/*string = "test";
+    	search = 't';*/
+    	int nombreLettre = 0;
+    	//string.charAt(0)
+    	for (int i= 0; i<string.length(); i++) {
+    		if (string.charAt(i) == search) {
+    			nombreLettre++ ;
+    		}
+    	}
+    	//int count = StringUtils.countMatches("elephant", "e");
+        return nombreLettre;
     }
 
     /**
@@ -130,8 +150,11 @@ public class StringTraining {
      * @return the string where searched characters are replaced, eg: "wesw"
      */
     public static String replaceChar(String string, char search, char replace) {
-
-        return "";
+    	/*string = "test";
+    	search = 't';
+    	replace = 'w';*/
+    	String remplace = string.replace(search, replace);
+        return remplace;
     }
 
     /**
@@ -139,10 +162,13 @@ public class StringTraining {
      * @param search,  eg: "e"
      * @param replace, eg: "oa"
      * @return the string where searched substring are replaced, eg: "toast"
-     */
+     */   //sxhtle
     public static String replaceString(String string, String search, String replace) {
-
-        return "";
+    	/*string = "test";
+    	search = "e";
+    	replace = "oa";*/
+    	String remplace = string.replace(search, replace);
+        return remplace;
     }
 
     /**
@@ -152,8 +178,10 @@ public class StringTraining {
      */
     public static String[] split(String string, String delimiter) {
         // https://howtodoinjava.com/java/string/java-string-split-example/
-
-        return null;
+    	/*string = "test|value";
+    	delimiter = "|";*/
+    	String[] stringArray = string.split(delimiter);
+        return stringArray;
     }
 
     /**
@@ -163,7 +191,11 @@ public class StringTraining {
      */
     public static String join(String[] strings, String delimiter) {
         // https://howtodoinjava.com/java8/java-8-join-string-array-example/
-
-        return "";
+    	/*strings[0] = "test";
+    	strings[1] = "value";
+    	delimiter = ";";*/
+    	String joinedString = String.join(delimiter, strings);
+    	
+        return joinedString;
     }
 }

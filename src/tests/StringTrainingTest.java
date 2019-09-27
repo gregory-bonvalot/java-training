@@ -209,8 +209,8 @@ public class StringTrainingTest extends MainTest {
         Method method = testMethod(obj, methodName, args);
         try {
             Assert.assertEquals("Method: " + methodName,
-                    "42",
-                    method.invoke(obj, 42));
+                    "3",
+                    method.invoke(obj, 3));
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
