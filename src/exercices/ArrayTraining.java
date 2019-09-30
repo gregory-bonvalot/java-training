@@ -64,7 +64,7 @@ public class ArrayTraining {
      * @return last value of the array, eg: 1
      */
     public int lastValue(int[] array) {
-    	int lengthArray =  array.length;
+    	int lengthArray =  array.length-1;
     	int lastArray =  array[lengthArray];
         return lastArray;
     }
@@ -86,8 +86,6 @@ public class ArrayTraining {
      * @return the array with the value replaced at position, eg: {3, 4, 5}
      */
     public int[] replace(int[] array, int value, int position) {
-    	//int positionArray = array[position];
-    	//positionArray = value ;
     	array[position] = value;
         return array;
     }
@@ -113,8 +111,6 @@ public class ArrayTraining {
     public boolean contains(int[] array, int search) {
     	boolean cestTrue = false;
     	for (int i = 0; i<array.length; i++) {
-    		//int nb = array[i];
-    		//if (array[i].equals(search)) {
     		if (search == array[i]) {
     			cestTrue = true;
         	}
@@ -127,10 +123,8 @@ public class ArrayTraining {
      * @return array where all words are capitalized, eg: {"Sample", "Value"}
      */
     public String[] capitalize(String[] array) {
-    	//String lettreUn = array[0];
     	for (int i = 0; i<array.length; i++) {
     		array[i] = array[i].substring(0, 1).toUpperCase() + array[i].substring(1);
-    		 //String cap
     	}
         return array;
     }
@@ -170,8 +164,7 @@ public class ArrayTraining {
     	for (int i = 0; i < array.length / 2; i++) {
             int temp = array[i];
             array[i] = array[array.length - 1 - i];
-            array[array.length - 1 - i] = temp;
-        
+            array[array.length - 1 - i] = temp; 
         } 
     	return array;
     }
@@ -182,20 +175,51 @@ public class ArrayTraining {
      * @return concatenates first and second values in one array,
      * eg: {1, 2, 3, 4, 5}
      */
+    /*
+     int[] first = {3, 6, 5};
+     int[] second = {2, 7};
+     int[] expected = {3, 6, 5, 2, 7};
+            */
     public int[] concat(int[] first, int[] second) {
-    	int tailleUn = first.length;
-    	int tailleDeux = second.length;
-    	int taille = tailleUn + tailleDeux;
-    	int [] expected = new int[taille];
+    	int tailleUn = first.length;//3
+    	int tailleDeux = second.length;//2
+    	int taille = tailleUn + tailleDeux; //5
+    	int[] expected = new int[taille]; // new int[5] = {0,1,2,3,4}
     	
-    	for(int i = 0; i<expected.length; i++) {
+    	for(int i = 0; i<taille; i++) {
+    		if(i<tailleUn) {
+    			expected[i] = first[i];
+    		}else {
+    			expected[i] = second[i-tailleUn];
+    		}
+    	}
+    	return expected;
+    }
+}
+    	/*
+    	 *  Object[] originalArray = new Object[5];   
+			Object[] largerArray = Arrays.copyOf(originalArray, 10);
+    	 */
+    	/*// Test routine for resizeArray().
+			public static void main (String[] args) {
+			   int[] a = {1, 2, 3};
+			   a = (int[])resizeArray(a, 5);
+			   a[3] = 4;
+			   a[4] = 5;
+			   for (int i=0; i<a.length; i++)
+			      System.out.println(a[i]); }
+			*/
+    	
+    	
+    	
+    	
+    	
+    	
+    	/*for(int i = 0; i<expected.length; i++) {
     		if(i<tailleUn) {
     			expected[i] = first[i];
     		}else {
     			expected[i] = second[i];
     		}
-    	}
-    	
-        return null;
-    }
-}
+    	}*/
+       

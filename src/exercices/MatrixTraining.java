@@ -1,4 +1,4 @@
-import org.junit.Assert;
+
 
 public class MatrixTraining {
 
@@ -61,18 +61,6 @@ public class MatrixTraining {
         return lengthArray;
     }
 
-    /* int[][] foo = new int[][] {
-        new int[] { 1, 2, 3 },
-        new int[] { 1, 2, 3, 4},
-    };
-
-    System.out.println(foo.length); //2
-    System.out.println(foo[0].length); //3
-    System.out.println(foo[1].length); //4
-}*/
-    
-    
-    
     /**
      * @param matrix, eg: {{3, 4}, {6, 7}, {5, 8}}
      * @return number of matrix columns, eg: 2
@@ -89,7 +77,6 @@ public class MatrixTraining {
      * @return value in matrix at line and column, eg: 6
      */
     public int valueAtPosition(int[][] matrix, int line, int column) {
-    	//matrix = new int[column][line] ; 
     	int find = matrix[line][column];
     	return find;
     }
@@ -103,7 +90,7 @@ public class MatrixTraining {
      * eg: {{1, 2, 3}, {4, 5, 6}}
      */
     public int[][] replace(int[][] matrix, int value, int line, int column) {
-    	matrix[column][line] = value;
+    	matrix[line][column] = value;
         return matrix;
     }
 
