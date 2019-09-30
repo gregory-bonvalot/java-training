@@ -1,3 +1,5 @@
+import org.junit.Assert;
+
 public class MatrixTraining {
 
     /**
@@ -7,8 +9,8 @@ public class MatrixTraining {
      * eg: {{0, 0}, {0, 0}, {0, 0}}
      */
     public int[][] emptyIntMatrix(int lines, int columns) {
-
-        return null;
+    	int[][] matrix = new int[lines][columns];
+        return matrix;
     }
 
     /**
@@ -18,8 +20,8 @@ public class MatrixTraining {
      * eg: {{null, null, null}, {null, null, null}}
      */
     public String[][] emptyStringMatrix(int lines, int columns) {
-
-        return null;
+    	String[][] matrix = new String[lines][columns];
+        return matrix;
     }
 
     /**
@@ -29,8 +31,11 @@ public class MatrixTraining {
      * @return an int matrix with a, b and c arrays
      */
     public int[][] intMatrix(int[] a, int[] b, int[] c) {
-
-        return null;
+    	int[][] matrix = new int[3][];
+    	matrix[0] = a;
+    	matrix[1] = b;
+    	matrix[2] = c;
+    	return matrix;
     }
 
     /**
@@ -40,8 +45,11 @@ public class MatrixTraining {
      * @return a String matrix with a, b and c arrays
      */
     public String[][] stringMatrix(String[] a, String[] b, String[] c) {
-
-        return null;
+    	String[][] matrix = new String[3][];
+    	matrix[0] = a;
+    	matrix[1] = b;
+    	matrix[2] = c;
+    	return matrix;
     }
 
     /**
@@ -49,17 +57,29 @@ public class MatrixTraining {
      * @return number of matrix lines, eg: 3
      */
     public int height(int[][] matrix) {
-
-        return 0;
+    	int lengthArray =  matrix.length;
+        return lengthArray;
     }
 
+    /* int[][] foo = new int[][] {
+        new int[] { 1, 2, 3 },
+        new int[] { 1, 2, 3, 4},
+    };
+
+    System.out.println(foo.length); //2
+    System.out.println(foo[0].length); //3
+    System.out.println(foo[1].length); //4
+}*/
+    
+    
+    
     /**
      * @param matrix, eg: {{3, 4}, {6, 7}, {5, 8}}
      * @return number of matrix columns, eg: 2
      */
     public int width(int[][] matrix) {
-
-        return 0;
+    	int lengthArray =  matrix[0].length;
+        return lengthArray;
     }
 
     /**
@@ -69,8 +89,9 @@ public class MatrixTraining {
      * @return value in matrix at line and column, eg: 6
      */
     public int valueAtPosition(int[][] matrix, int line, int column) {
-
-        return 0;
+    	//matrix = new int[column][line] ; 
+    	int find = matrix[line][column];
+    	return find;
     }
 
     /**
@@ -82,8 +103,8 @@ public class MatrixTraining {
      * eg: {{1, 2, 3}, {4, 5, 6}}
      */
     public int[][] replace(int[][] matrix, int value, int line, int column) {
-
-        return null;
+    	matrix[column][line] = value;
+        return matrix;
     }
 
     /**
@@ -91,8 +112,13 @@ public class MatrixTraining {
      * @return sum of matrix values, eg: 21
      */
     public int sum(int[][] matrix) {
-
-        return 0;
+    	int total = 0;
+    	for (int i = 0; i < matrix.length; i++) {
+    		for (int j = 0; j < matrix[i].length; j++) {
+    			total = total + matrix[i][j];
+    		}
+    	}
+        return total;
     }
 
     /**
@@ -101,8 +127,15 @@ public class MatrixTraining {
      * @return if matrix contains searched value, eg: true
      */
     public boolean contains(int[][] matrix, int search) {
-
-        return false;
+    	boolean cestTrue = false;
+    	for (int i = 0; i < matrix.length; i++) {
+    		for (int j = 0; j < matrix[i].length; j++) {
+    			if (search == matrix[i][j]) {
+    				cestTrue = true;
+    			}
+    		}
+    	}
+        return cestTrue;
     }
 
     /**
@@ -110,8 +143,15 @@ public class MatrixTraining {
      * @return how many even numbers are in matrix, eg: 3
      */
     public int countEvens(int[][] matrix) {
-
-        return 0;
+    	int total = 0;
+    	for (int i = 0; i < matrix.length; i++) {
+    		for (int j = 0; j < matrix[i].length; j++) {
+    			if ((matrix[i][j] % 2) == 0){
+    				total += 1;
+    			}
+    		}
+    	}
+        return total;
     }
 
     /**
@@ -120,7 +160,14 @@ public class MatrixTraining {
      * @return the number of character occurrences in matrix, eg: 3
      */
     public int occurrences(char[][] matrix, char search) {
-
-        return 0;
+    	int total = 0;
+    	for (int i = 0; i < matrix.length; i++) {
+    		for (int j = 0; j < matrix[i].length; j++) {
+    			if (search == matrix[i][j]){
+    				total += 1;
+    			}
+    		}
+    	}
+        return total;
     }
 }
